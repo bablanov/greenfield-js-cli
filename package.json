@@ -1,0 +1,19 @@
+{
+  "name": "greenfield-js-cli",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bablanov/greenfield-js-cli.git"
+  },
+  "author": "Tech Synergy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bablanov/greenfield-js-cli/issues"
+  },
+  "homepage": "https://github.com/bablanov/greenfield-js-cli#readme"
+}
