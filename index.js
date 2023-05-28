@@ -17,6 +17,14 @@ const { clear, debug } = flags;
     await cmd.account.getAccount(flags);
   }
 
+  if (input.includes('get-account-balance')) {
+    await cmd.account.getAccountBalance(flags);
+  }
+
+  if (input.includes('account-transfer')) {
+    await cmd.account.transfer(flags);
+  }
+
   if(input.includes('create-bucket')){
     await cmd.bucket.createBucket(flags);
   }
@@ -32,6 +40,7 @@ const { clear, debug } = flags;
   if(input.includes('delete-bucket')){
     await cmd.bucket.deleteBucket(flags);
   }
+
   if (input.includes('get-providers')) {
     await cmd.provider.getProviders();
   }

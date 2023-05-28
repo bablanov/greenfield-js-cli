@@ -58,6 +58,8 @@ const flags = {
 const commands = {
 	help: { desc: `Print help info` },
 	'get-account': { desc: `Returns account info` },
+	'get-account-balance': { desc: `Returns account balance info` },
+	'account-transfer': { desc: `Transfer between amount` },
 	'create-bucket' : {desc : `Creating new bucket`},
 	'get-bucket-by-id' : {desc : "Returns bucket info by ID"},
 	'get-bucket-by-name' : {desc : "Returns bucket info by name"},
@@ -65,6 +67,7 @@ const commands = {
 	'get-providers': { desc: `Returns all providers` },
 	'get-provider-price': { desc: `Returns provider price` },
 	'get-specific-provider': { desc: `Returns more info about provider` },
+	'crosschain-transfer-out': { desc: `Transfer amount` },
 };
 
 const helpText = meowHelp({
