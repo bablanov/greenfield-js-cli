@@ -1,8 +1,8 @@
 const {crosschain} = require("../../methods");
 
 const transferOut = async (flags) => {
-  if (!flags.address) {
-    console.error('You must add flag address');
+  if (!flags.toAddress) {
+    console.error('You must add flag toAddress');
     return ;
   }
 
@@ -11,7 +11,7 @@ const transferOut = async (flags) => {
     return ;
   }
 
-  const result = await crosschain.transferOut(flags.address, flags.amount);
+  const result = await crosschain.transferOut(flags.toAddress, flags.amount);
 
   console.info(result.msg);
   console.info(result.data);
