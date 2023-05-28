@@ -29,6 +29,10 @@ const { clear, debug } = flags;
     await cmd.provider.getSpecificProvider(flags);
   }
 
+  if (input.includes('crosschain-transfer-out')) {
+    await cmd.crosschain.transferOut(flags);
+  }
+
   input.includes(`help`) && cli.showHelp(0);
 
   debug && log(flags);
