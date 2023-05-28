@@ -1,7 +1,6 @@
 require("dotenv").config();
 
 const cmd = require("./cmd");
-const methods = require("./methods");
 
 const init = require('./cmd/utils/init');
 const cli = require('./cmd/utils/cli');
@@ -32,6 +31,21 @@ const { clear, debug } = flags;
 
   if(input.includes('delete-bucket')){
     await cmd.bucket.deleteBucket(flags);
+  }
+  if (input.includes('get-providers')) {
+    await cmd.provider.getProviders();
+  }
+
+  if (input.includes('get-provider-price')) {
+    await cmd.provider.getProviderPrice(flags);
+  }
+
+  if (input.includes('get-specific-provider')) {
+    await cmd.provider.getSpecificProvider(flags);
+  }
+
+  if (input.includes('crosschain-transfer-out')) {
+    await cmd.crosschain.transferOut(flags);
   }
 
   input.includes(`help`) && cli.showHelp(0);
