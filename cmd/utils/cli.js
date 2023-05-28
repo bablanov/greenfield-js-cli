@@ -34,7 +34,10 @@ const flags = {
 
 const commands = {
 	help: { desc: `Print help info` },
-	'get-account': { desc: `Returns account info` }
+	'get-account': { desc: `Returns account info` },
+	'get-providers': { desc: `Returns all providers` },
+	'get-provider-price': { desc: `Returns provider price` },
+	'get-specific-provider': { desc: `Returns more info about provider` },
 };
 
 const helpText = meowHelp({
