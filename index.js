@@ -25,6 +25,22 @@ const { clear, debug } = flags;
     await cmd.account.transfer(flags);
   }
 
+  if(input.includes('create-bucket')){
+    await cmd.bucket.createBucket(flags);
+  }
+
+  if(input.includes('get-bucket-by-id')){
+    await cmd.bucket.findById(flags);
+  }
+
+  if(input.includes('get-bucket-by-name')){
+    await cmd.bucket.findByName(flags);
+  }
+
+  if(input.includes('delete-bucket')){
+    await cmd.bucket.deleteBucket(flags);
+  }
+
   if (input.includes('get-providers')) {
     await cmd.provider.getProviders();
   }
