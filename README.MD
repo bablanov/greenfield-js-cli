@@ -28,30 +28,26 @@ The commands support different categories, including storage,group,bridge,bank,p
 // get help for supporing commands and basic command format
 npm run gnfd help
   help                   Print help info                     
-  sp                     Returns account info                
-  bank                   Creating new bucket                 
-  crosschain             Returns bucket info by ID           
-  object                 Returns bucket info by name         
+  sp                     Storage provider functions                
+  bank                   Bank functions          
+  crosschain             Crosschain functions           
+  object                 Object functions
+  bucket                 Bucket functions           
   
-  detele-bucket          Deleting bucket                     
-  get-providers          Returns all providers               
-  get-provider-price     Returns provider price              
-  get-specific-provider  Returns more info about provider 
-  get-object             Downloading object by name, bucket name, endpoint
 ```
 
 ### Examples
 
-#### Account Operations
+#### Bank Operations Examples
 ```
 // bankTransfer to an account in Greenfield
-npm run gnfd bank transfer --toAddress 0xE42B5AD90AfF1e8Ad90F76e02541A71Ca9D41A11 --amount 2000000000
+node index.js gnfd bank transfer --toAddress 0xE42B5AD90AfF1e8Ad90F76e02541A71Ca9D41A11 --amount 2000000000
 
 // query the balance of account
-npm run gnfd bank balance --address 0xC2FFa0cE69B7c6a0C103225b8C1AE262ae44051e
+node index.js gnfd bank balance --address 0xC2FFa0cE69B7c6a0C103225b8C1AE262ae44051e
 
 // list payment accounts under owner or a address
-npm run gnfd bank ls --owner 0x5a64aCD8DC6Ce41d824638419319409246A9b41A
+node index.js bank ls --owner 0x5a64aCD8DC6Ce41d824638419319409246A9b41A
 ```
 
 #### Storage Provider Operations
@@ -59,13 +55,13 @@ npm run gnfd bank ls --owner 0x5a64aCD8DC6Ce41d824638419319409246A9b41A
 THis command is used to list the SP and query the information of SP.
 ```
 // list storage providers
-npm run gnfd sp ls     
+node index.js gnfd sp ls     
 
 // get quota and storage price of storage provider:
-npm run gnfd sp head --address 0xE42B5AD90AfF1e8Ad90F76e02541A71Ca9D41A11
+node index.js gnfd sp head --address 0xE42B5AD90AfF1e8Ad90F76e02541A71Ca9D41A11
 
 // get quota and storage price of storage provider:
-npm run gnfd sp get-price --address 0xE42B5AD90AfF1e8Ad90F76e02541A71Ca9D41A11
+node index.js sp get-price --address 0xE42B5AD90AfF1e8Ad90F76e02541A71Ca9D41A11
 ```
 
 #### Bucket Operations
@@ -76,8 +72,21 @@ and then select the target SP to which the bucket will be created on.
 ```
 // create bucket. 
 // If the primary SP has not been not set, the cmd will choose first SP in the SP list which obtain from chain as the primary SP.
-npm run gnfd create-bucket -b test1 -t public
+node index.js gnfd bucket create -b test1 --t public
 
+// delete bucket
+node index.js bucket delete --bucketName test-foofie10 
+
+// get bucket info by name
+node index.js bucket get-by-name --bucketName test-foofie10
+
+// get bucket info by id
+node index.js bucket get-by-id --id 373
+
+// get your bucket's list
+
+node index.js bucket get-buckets --endpoint https://gnfd-testnet-sp-2.bnbchain.org
+//
 ```
 #### Download Operations
 
@@ -85,7 +94,7 @@ download object
 
 The "object get" command is used to download an object to local path. This command will return the local file path where the object will be downloaded and the file size after successful execution.
 ```
-npm run gnfd object get --objectName test.png --bucketName test-foofie-10 ---endpoint https://gnfd-testnet-sp-2.bnbchain.org
+node index.js gnfd object get --objectName test.png --bucketName test-foofie-10 ---endpoint https://gnfd-testnet-sp-2.bnbchain.org
 ```
 The filepath can be a specific file path, a directory path, or not set at all.
 If not set, the command will download the content to a file with the same name as the object name in the current directory. If it is set as a directory, the command will download the object file into the directory.
@@ -93,5 +102,10 @@ If not set, the command will download the content to a file with the same name a
 #### Crosschain Operations
 ```
 // crosschain bankTransfer some tokens to an account in BSC
-npm run gnfd crosschain transfer-out --toAddress 0xE42B5AD90AfF1e8Ad90F76e02541A71Ca9D41A11 --amount 2000000000
+node index.js gnfd crosschain transfer-out --toAddress 0xE42B5AD90AfF1e8Ad90F76e02541A71Ca9D41A11 --amount 2000000000
 ```
+#### Delete Object Operation
+
+````
+node index.js object delete --bucketName test-foofie4 --objectName test.png
+````
