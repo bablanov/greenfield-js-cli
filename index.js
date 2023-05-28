@@ -13,8 +13,16 @@ const { clear, debug } = flags;
 (async () => {
   init({ clear });
 
-  if (input.includes('get-account')) {
-    await cmd.account.getAccount(flags);
+  if (input.includes('get-bank')) {
+    await cmd.bank.getBank(flags);
+  }
+
+  if(input.includes('get-bank-balance')){
+    await cmd.bank.getBankBalance(flags);
+  }
+
+  if(input.includes('bank-transfer')){
+    await cmd.bank.bankTransfer(flags);
   }
 
   if(input.includes('create-bucket')){

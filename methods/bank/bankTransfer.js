@@ -1,5 +1,5 @@
 const client = require("../client");
-async function transfer(toAddress, amount){
+async function bankTransfer(toAddress, amount){
     const transferTx = await client.account.transfer({
         fromAddress : process.env.ADDRESS,
         toAddress : toAddress,
@@ -27,4 +27,4 @@ async function transfer(toAddress, amount){
     };
 }
 
-module.exports = transfer;
+module.exports = bankTransfer;

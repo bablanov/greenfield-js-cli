@@ -67,7 +67,9 @@ const flags = {
 
 const commands = {
 	help: { desc: `Print help info` },
-	'get-account': { desc: `Returns account info` },
+	'get-bank': { desc: `Returns bank info` },
+	'get-bank-balance' : {desc : "Returns bank balance"},
+	'bank-transfer' : {desc : "Transfers money to another bank account"},
 	'create-bucket' : {desc : `Creating new bucket`},
 	'get-bucket-by-id' : {desc : "Returns bucket info by ID"},
 	'get-bucket-by-name' : {desc : "Returns bucket info by name"},

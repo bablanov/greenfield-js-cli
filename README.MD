@@ -43,8 +43,8 @@ npm run gnfd help
 
 #### Account Operations
 ```
-// transfer to an account in Greenfield
-npm run gnfd account-transfer -a 0xE42B5AD90AfF1e8Ad90F76e02541A71Ca9D41A11 --amount 2000000000
+// bankTransfer to an account in Greenfield
+npm run gnfd account-bankTransfer -a 0xE42B5AD90AfF1e8Ad90F76e02541A71Ca9D41A11 --amount 2000000000
 
 // query the balance of account
 npm run gnfd get-account-balance -a 0x52086Ef36E57E8B23EB9458f732ef50E122478E0
@@ -85,6 +85,6 @@ If not set, the command will download the content to a file with the same name a
 
 #### Crosschain Operations
 ```
-// crosschain transfer some tokens to an account in BSC
-npm run gnfd crosschain-transfer-out -a 0xE42B5AD90AfF1e8Ad90F76e02541A71Ca9D41A11 --amount 2000000000
+// crosschain bankTransfer some tokens to an account in BSC
+npm run gnfd crosschain-bankTransfer-out -a 0xE42B5AD90AfF1e8Ad90F76e02541A71Ca9D41A11 --amount 2000000000
 ```
