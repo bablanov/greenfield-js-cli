@@ -18,6 +18,8 @@
   "homepage": "https://github.com/bablanov/greenfield-js-cli#readme",
   "dependencies": {
     "@bnb-chain/greenfield-chain-sdk": "^0.2.0",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.3"
     "create-node-cli": "^1.6.1",
     "dotenv": "^16.0.3",
     "chalk": "^4.1.2",

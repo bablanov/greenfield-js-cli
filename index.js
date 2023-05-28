@@ -21,3 +21,4 @@ const { clear, debug } = flags;
 
   debug && log(flags);
 })();
+
