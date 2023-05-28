@@ -3,6 +3,7 @@ const crypto = require("node:crypto");
 
 const client = require("../client");
 const selectSp = require("../spInfo");
+const {object} = require("../index");
 function generateChecksum(str, algorithm, encoding) {
     return crypto
         .createHash(algorithm || 'md5')
@@ -16,16 +17,6 @@ async function createObject(bucketName, objectName, type, ){
     const stats = fs.statSync(filePath);
     const bytes = new Uint8Array(fileBuffer);
     const exceptCheckSums = generateChecksum(bytes);
-    // console.log({
-    //     bucketName,
-    //     objectName,
-    //     creator : process.env.ADDRESS,
-    //     fileType : type,
-    //     exceptCheckSums,
-    //     spInfo,
-    //     exceptSecondarySpAddresses : spInfo.secondarySpAddresses,
-    //     contentLength : stats.size,
-    // })
     try{
         const obj = await client.object.createObject({
             bucketName: bucketName,
@@ -38,6 +29,19 @@ async function createObject(bucketName, objectName, type, ){
             exceptCheckSums : exceptCheckSums,
             file : fileBuffer
         })
+        const simulate = await obj.simulate({
+            denom : "BNB"
+        });
+
+        const broadcast = await obj.broadcast({
+            denom : "BNB",
+            payer : process.env.ADDRESS,
+            privateKey : `0x${process.env.PRIVATE_KEY}`,
+            gasPrice : simulate?.gasPrice || "5000000000",
+            gasLimit : Number(simulate?.gasLimit),
+            granter : ""
+        })
+        console.log(broadcast)
     } catch (e){
         console.log(e)
     }
