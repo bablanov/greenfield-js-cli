@@ -1,8 +1,24 @@
 require("dotenv").config();
 
+const cmd = require("./cmd");
 
-const methods = require("./methods");
+const init = require('./cmd/utils/init');
+const cli = require('./cmd/utils/cli');
+const log = require('./cmd/utils/log');
+
+const input = cli.input;
+const flags = cli.flags;
+const { clear, debug } = flags;
 
 (async () => {
-    const object = await methods.object.createObject("test-foofie4", "text", "txt");
-})()
+  init({ clear });
+
+  if (input.includes('get-account')) {
+    await cmd.account.getAccount(flags);
+  }
+
+  input.includes(`help`) && cli.showHelp(0);
+
+  debug && log(flags);
+})();
+

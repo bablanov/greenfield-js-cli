@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "gnfd": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -18,8 +18,16 @@
   "homepage": "https://github.com/bablanov/greenfield-js-cli#readme",
   "dependencies": {
     "@bnb-chain/greenfield-chain-sdk": "^0.2.0",
-    "@bnb-chain/greenfiled-file-handle": "^0.2.0",
     "crypto": "^1.0.1",
     "dotenv": "^16.0.3"
+    "create-node-cli": "^1.6.1",
+    "dotenv": "^16.0.3",
+    "chalk": "^4.1.2",
+    "cli-alerts": "^1.2.2",
+    "cli-handle-error": "^4.4.0",
+    "cli-handle-unhandled": "^1.1.1",
+    "cli-meow-help": "^3.1.0",
+    "cli-welcome": "^2.2.2",
+    "meow": "^9.0.0"
   }
 }
