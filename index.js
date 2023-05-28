@@ -59,56 +59,36 @@ const { clear, debug } = flags;
       // object get --objectName test.png --bucketName test-foofie-10 ---endpoint https://gnfd-testnet-sp-2.bnbchain.org
       await cmd.object.getObject(flags);
     }
+    if(input.includes('delete-object')){
+      await cmd.object.deleteObject(flags)
+    }
   }
 
-  if (input.includes('create-bucket')) {
-    await cmd.bucket.createBucket(flags);
-  }
+  if(input.includes('bucket')){
+    if (input.includes('create')) {
+      // bucket create --bucketName test-foofie10 --type private
+      await cmd.bucket.createBucket(flags);
+    }
 
-  if (input.includes('get-bucket-by-id')) {
-    await cmd.bucket.findById(flags);
-  }
+    if (input.includes('get-by-id')) {
+      // bucket get-by-id --id 373
+      await cmd.bucket.findById(flags);
+    }
 
-  if (input.includes('get-bucket-by-name')) {
-    await cmd.bucket.findByName(flags);
-  }
+    if (input.includes('get-by-name')) {
+      // bucket get-by-name --bucketName test-foofie10
+      await cmd.bucket.findByName(flags);
+    }
 
+    if(input.includes('ls')){
+      // bucket get-buckets --endpoint https://gnfd-testnet-sp-2.bnbchain.org
+      await cmd.bucket.listBuckets(flags);
+    }
 
-  if (input.includes('delete-bucket')) {
-    await cmd.bucket.deleteBucket(flags);
-  }
-
-  if(input.includes('get-buckets')){
-    await cmd.bucket.listBuckets(flags);
-  }
-
-  if(input.includes('delete-bucket')){
-    await cmd.bucket.deleteBucket(flags);
-  }
-
-  if (input.includes('get-providers')) {
-    await cmd.provider.getProviders();
-  }
-
-  if (input.includes('get-provider-price')) {
-    await cmd.provider.getProviderPrice(flags);
-  }
-
-  if (input.includes('get-specific-provider')) {
-    await cmd.provider.getSpecificProvider(flags);
-  }
-
-  if (input.includes('crosschain-transfer-out')) {
-    await cmd.crosschain.transferOut(flags);
-  }
-
-  if(input.includes('get-object')){
-    console.log(flags)
-    await cmd.object.getObject(flags);
-  }
-
-  if(input.includes('delete-object')){
-    await cmd.object.deleteObject(flags)
+    if(input.includes('delete')){
+      // bucket delete --bucketName test-foofie10
+      await cmd.bucket.deleteBucket(flags);
+    }
   }
 
   input.includes(`help`) && cli.showHelp(0);
