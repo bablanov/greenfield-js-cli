@@ -30,11 +30,33 @@ const flags = {
 		alias: `a`,
 		desc: `Account address`
 	},
+	bucketName : {
+		default : "",
+		type : `string`,
+		alias : `b`,
+		desc : `Bucket name`
+	},
+	type : {
+		default : "public",
+		type : `string`,
+		alias : 't',
+		desc : "Visibility type"
+	},
+	id : {
+		type : `string`,
+		default : "",
+		alias : "i",
+		desc : "Identifier"
+	}
 };
 
 const commands = {
 	help: { desc: `Print help info` },
-	'get-account': { desc: `Returns account info` }
+	'get-account': { desc: `Returns account info` },
+	'create-bucket' : {desc : `Creating new bucket`},
+	'get-bucket-by-id' : {desc : "Returns bucket info by ID"},
+	'get-bucket-by-name' : {desc : "Returns bucket info by name"},
+	'detele-bucket' : {desc : "Deleting bucket"}
 };
 
 const helpText = meowHelp({
