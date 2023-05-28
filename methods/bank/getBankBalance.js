@@ -1,6 +1,6 @@
 const client = require("../client");
 
-async function getAccountBalance(address){
+async function getBankBalance(address){
     const accountBalance = await client.account.getAccountBalance({
         denom : "BNB",
         address : address
@@ -11,4 +11,4 @@ async function getAccountBalance(address){
     };
 }
 
-module.exports = getAccountBalance;
+module.exports = getBankBalance;
