@@ -15,6 +15,25 @@ const getObject = async (flags) => {
 
 }
 
+const deleteObject = async (flags) => {
+    if(!flags.bucketName){
+        console.log("Write a bucket name!");
+        return;
+    }
+
+    if(!flags.objectName){
+        console.log("Write a object name!");
+        return;
+    }
+
+    const result = await object.deleteObject(flags.bucketName, flags.objectName);
+
+    console.log(result.msg);
+    console.log(result.data);
+}
+
+
 module.exports = {
-    getObject
+    getObject,
+    deleteObject
 }

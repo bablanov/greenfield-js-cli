@@ -12,7 +12,6 @@ const { clear, debug } = flags;
 
 (async () => {
   init({ clear });
-
   if (input.includes('get-bank')) {
     await cmd.bank.getBank(flags);
   }
@@ -44,6 +43,7 @@ const { clear, debug } = flags;
   if(input.includes('delete-bucket')){
     await cmd.bucket.deleteBucket(flags);
   }
+
   if (input.includes('get-providers')) {
     await cmd.provider.getProviders();
   }
@@ -63,6 +63,10 @@ const { clear, debug } = flags;
   if(input.includes('get-object')){
     console.log(flags)
     await cmd.object.getObject(flags);
+  }
+
+  if(input.includes('delete-object')){
+    await cmd.object.deleteObject(flags)
   }
 
   input.includes(`help`) && cli.showHelp(0);
