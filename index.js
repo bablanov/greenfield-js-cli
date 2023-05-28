@@ -13,8 +13,8 @@ const { clear, debug } = flags;
 (async () => {
   init({ clear });
 
-  if (input.includes('account')) {
-    cmd.account.getAccount(process.env.ADDRESS);
+  if (input.includes('get-account')) {
+    await cmd.account.getAccount(flags);
   }
 
   input.includes(`help`) && cli.showHelp(0);

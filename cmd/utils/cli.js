@@ -23,12 +23,18 @@ const flags = {
 		type: `boolean`,
 		alias: `v`,
 		desc: `Print CLI version`
-	}
+	},
+	address: {
+		default: "",
+		type: `string`,
+		alias: `a`,
+		desc: `Account address`
+	},
 };
 
 const commands = {
 	help: { desc: `Print help info` },
-	account: { desc: `Guide` }
+	'get-account': { desc: `Returns account info` }
 };
 
 const helpText = meowHelp({
