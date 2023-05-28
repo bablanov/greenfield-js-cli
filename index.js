@@ -37,6 +37,10 @@ const { clear, debug } = flags;
     await cmd.bucket.findByName(flags);
   }
 
+  if(input.includes('get-buckets')){
+    await cmd.bucket.listBuckets(flags);
+  }
+
   if(input.includes('delete-bucket')){
     await cmd.bucket.deleteBucket(flags);
   }
