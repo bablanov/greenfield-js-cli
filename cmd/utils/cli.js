@@ -40,9 +40,12 @@ const flags = {
 const commands = {
 	help: { desc: `Print help info` },
 	'get-account': { desc: `Returns account info` },
+	'get-account-balance': { desc: `Returns account balance info` },
+	'account-transfer': { desc: `Transfer between amount` },
 	'get-providers': { desc: `Returns all providers` },
 	'get-provider-price': { desc: `Returns provider price` },
 	'get-specific-provider': { desc: `Returns more info about provider` },
+	'crosschain-transfer-out': { desc: `Transfer amount` },
 };
 
 const helpText = meowHelp({
