@@ -1,12 +1,12 @@
 const {bank} = require("../../methods");
 
 const getBank = async (flags) => {
-  if (!flags.address) {
-    console.error('You must add flag address');
+  if (!flags.owner) {
+    console.error('You must add flag owner');
     return ;
   }
 
-  const result = await bank.getBank(flags.address);
+  const result = await bank.getBank(flags.owner);
 
   console.info(result.msg);
   console.info(result.data);
@@ -25,7 +25,7 @@ const getBankBalance = async (flags) => {
 }
 
 const bankTransfer = async (flags) => {
-  if(!flags.address){
+  if(!flags.toAddress){
     console.log("Write an address!");
     return;
   }
@@ -35,7 +35,7 @@ const bankTransfer = async (flags) => {
     return;
   }
 
-  const transfer = await bank.bankTransfer(flags.address, flags.amount);
+  const transfer = await bank.bankTransfer(flags.toAddress, flags.amount);
 
   console.log(transfer.msg);
   console.log(transfer.data);

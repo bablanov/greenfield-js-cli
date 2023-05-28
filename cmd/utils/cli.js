@@ -30,6 +30,16 @@ const flags = {
 		alias: `a`,
 		desc: `Account address`
 	},
+	owner: {
+		default: "",
+		type: `string`,
+		desc: `Account address`
+	},
+	toAddress: {
+		default: "",
+		type: `string`,
+		desc: `Account address`
+	},
 	bucketName : {
 		default : "",
 		type : `string`,
@@ -67,17 +77,15 @@ const flags = {
 
 const commands = {
 	help: { desc: `Print help info` },
-	'get-bank': { desc: `Returns bank info` },
-	'get-bank-balance' : {desc : "Returns bank balance"},
-	'bank-transfer' : {desc : "Transfers money to another bank account"},
+	'sp': { desc: `support the storage provider operation functions` },
+	'bank': { desc: `support the bank functions` },
+	'crosschain': { desc: `support the cross-chain functions` },
+	'object': { desc: `support the object operation functions` },
+
 	'create-bucket' : {desc : `Creating new bucket`},
 	'get-bucket-by-id' : {desc : "Returns bucket info by ID"},
 	'get-bucket-by-name' : {desc : "Returns bucket info by name"},
 	'detele-bucket' : {desc : "Deleting bucket"},
-	'get-providers': { desc: `Returns all providers` },
-	'get-provider-price': { desc: `Returns provider price` },
-	'get-specific-provider': { desc: `Returns more info about provider` },
-	'get-object' : {desc : "Downloading object by name, bucket name, endpoint"}
 };
 
 const helpText = meowHelp({
