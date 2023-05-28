@@ -30,6 +30,24 @@ const flags = {
 		alias: `a`,
 		desc: `Account address`
 	},
+	bucketName : {
+		default : "",
+		type : `string`,
+		alias : `b`,
+		desc : `Bucket name`
+	},
+	type : {
+		default : "public",
+		type : `string`,
+		alias : 't',
+		desc : "Visibility type"
+	},
+	id : {
+		type : `string`,
+		default : "",
+		alias : "i",
+		desc : "Identifier"
+	},
 	amount: {
 		default: "",
 		type: `string`,
@@ -40,6 +58,10 @@ const flags = {
 const commands = {
 	help: { desc: `Print help info` },
 	'get-account': { desc: `Returns account info` },
+	'create-bucket' : {desc : `Creating new bucket`},
+	'get-bucket-by-id' : {desc : "Returns bucket info by ID"},
+	'get-bucket-by-name' : {desc : "Returns bucket info by name"},
+	'detele-bucket' : {desc : "Deleting bucket"}
 	'get-providers': { desc: `Returns all providers` },
 	'get-provider-price': { desc: `Returns provider price` },
 	'get-specific-provider': { desc: `Returns more info about provider` },

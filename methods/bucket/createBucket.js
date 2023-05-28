@@ -24,7 +24,7 @@ async function createBucket(bucketName, type) {
 
     if (res.code === 0) {
         return {
-            msg: "",
+            msg: "Bucket successfully created!",
             data: res
         };
     }
