@@ -78,7 +78,8 @@ const commands = {
 	'get-providers': { desc: `Returns all providers` },
 	'get-provider-price': { desc: `Returns provider price` },
 	'get-specific-provider': { desc: `Returns more info about provider` },
-	'get-object' : {desc : "Downloading object by name, bucket name, endpoint"}
+	'get-object' : {desc : "Downloading object by name, bucket name, endpoint"},
+	'delete-object' : {desc : "Deletes object"}
 };
 
 const helpText = meowHelp({
