@@ -53,6 +53,16 @@ const flags = {
 		type: `string`,
 		desc: `Amount`
 	},
+	objectName : {
+		default : "",
+		type : "string",
+		desc : "Object name"
+	},
+	endpoint : {
+		default : "",
+		type : "string",
+		desc : "Greenfield endpoint"
+	}
 };
 
 const commands = {
@@ -61,10 +71,11 @@ const commands = {
 	'create-bucket' : {desc : `Creating new bucket`},
 	'get-bucket-by-id' : {desc : "Returns bucket info by ID"},
 	'get-bucket-by-name' : {desc : "Returns bucket info by name"},
-	'detele-bucket' : {desc : "Deleting bucket"}
+	'detele-bucket' : {desc : "Deleting bucket"},
 	'get-providers': { desc: `Returns all providers` },
 	'get-provider-price': { desc: `Returns provider price` },
 	'get-specific-provider': { desc: `Returns more info about provider` },
+	'get-object' : {desc : "Downloading object by name, bucket name, endpoint"}
 };
 
 const helpText = meowHelp({

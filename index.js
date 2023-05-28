@@ -48,6 +48,11 @@ const { clear, debug } = flags;
     await cmd.crosschain.transferOut(flags);
   }
 
+  if(input.includes('get-object')){
+    console.log(flags)
+    await cmd.object.getObject(flags);
+  }
+
   input.includes(`help`) && cli.showHelp(0);
 
   debug && log(flags);
