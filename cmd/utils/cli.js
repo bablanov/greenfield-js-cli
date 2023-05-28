@@ -30,6 +30,11 @@ const flags = {
 		alias: `a`,
 		desc: `Account address`
 	},
+	amount: {
+		default: "",
+		type: `string`,
+		desc: `Amount`
+	},
 };
 
 const commands = {
