@@ -45,9 +45,22 @@ const deleteBucket = async (flags) => {
     console.log(result.data);
 }
 
+const listBuckets = async (flags) => {
+    if(!flags.endpoint){
+        console.log("Write an endpoint!");
+        return;
+    }
+
+    const result = await bucket.listBucket(flags.endpoint);
+
+    console.log(result.msg);
+    console.log(result.data);
+}
+
 module.exports = {
     createBucket,
     findById,
     findByName,
-    deleteBucket
+    deleteBucket,
+    listBuckets,
 }

@@ -86,6 +86,12 @@ const commands = {
 	'get-bucket-by-id' : {desc : "Returns bucket info by ID"},
 	'get-bucket-by-name' : {desc : "Returns bucket info by name"},
 	'detele-bucket' : {desc : "Deleting bucket"},
+	'get-buckets' : {desc : "Info about all your buckets, in some Greenfield endpoint"},
+	'get-providers': { desc: `Returns all providers` },
+	'get-provider-price': { desc: `Returns provider price` },
+	'get-specific-provider': { desc: `Returns more info about provider` },
+	'get-object' : {desc : "Downloading object by name, bucket name, endpoint"},
+	'delete-object' : {desc : "Deletes object"}
 };
 
 const helpText = meowHelp({
