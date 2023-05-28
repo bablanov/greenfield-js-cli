@@ -36,7 +36,7 @@ npm run gnfd help
   get-providers          Returns all providers               
   get-provider-price     Returns provider price              
   get-specific-provider  Returns more info about provider 
-
+  get-object             Downloading object by name, bucket name, endpoint
 ```
 
 ### Examples
