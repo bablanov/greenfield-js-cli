@@ -10,8 +10,7 @@ async function getObject(objectName, bucketName, endpoint){
         endpoint : endpoint,
     });
     const buffer = Buffer.from(await object.body.arrayBuffer());
-    const DocumentPath = path.join(os.homedir(), "Documents")
-    const filePath = path.join(DocumentPath, objectName)
+    const filePath = path.join(os.homedir(), objectName)
     fs.writeFile(filePath, buffer, (err) => {
         if(err) console.log("error")
         else console.log(`File successfully downloaded in path : ${filePath}`)
